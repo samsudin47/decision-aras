@@ -1,5 +1,11 @@
-import { Calendar, Home, Inbox, Search, Settings } from "lucide-react";
-
+import {
+  Database,
+  CalculatorIcon,
+  Home,
+  PrinterIcon,
+  User2Icon,
+  LogOutIcon,
+} from "lucide-react";
 import {
   Sidebar,
   SidebarContent,
@@ -14,42 +20,64 @@ import {
 // Menu items.
 const items = [
   {
-    title: "Home",
+    title: "Dashboard",
     url: "#",
     icon: Home,
   },
   {
-    title: "Inbox",
+    title: "Data Kriteria",
     url: "#",
-    icon: Inbox,
+    icon: Database,
   },
   {
-    title: "Calendar",
+    title: "Data Sub Kriteria",
     url: "#",
-    icon: Calendar,
+    icon: Database,
   },
   {
-    title: "Search",
+    title: "Data Alternatif",
     url: "#",
-    icon: Search,
+    icon: Database,
   },
   {
-    title: "Settings",
+    title: "Data Penilaian",
     url: "#",
-    icon: Settings,
+    icon: CalculatorIcon,
+  },
+  {
+    title: "Data Perhitungan",
+    url: "#",
+    icon: CalculatorIcon,
+  },
+  {
+    title: "Data Hasil Akhir",
+    url: "#",
+    icon: PrinterIcon,
+  },
+  {
+    title: "Data User",
+    url: "#",
+    icon: User2Icon,
+  },
+  {
+    title: "Logout",
+    url: "#",
+    icon: LogOutIcon,
   },
 ];
 
 export function AppSidebar() {
   return (
-    <Sidebar>
+    <Sidebar style={{ backgroundColor: "#DEB887" }}>
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel>Application</SidebarGroupLabel>
-          <SidebarGroupContent>
-            <SidebarMenu>
+          <SidebarGroupLabel className="mt-5">
+            <span className="text-lg text-black ">SPK ARAS</span>
+          </SidebarGroupLabel>
+          <SidebarGroupContent className="ml-2">
+            <SidebarMenu className="mt-5">
               {items.map((item) => (
-                <SidebarMenuItem key={item.title}>
+                <SidebarMenuItem className="my-2  font-sans" key={item.title}>
                   <SidebarMenuButton asChild>
                     <a href={item.url}>
                       <item.icon />
